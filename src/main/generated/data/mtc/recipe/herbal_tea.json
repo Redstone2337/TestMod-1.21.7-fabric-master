@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "mtc:silicon"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mtc:herbal_tea"
+  }
+}

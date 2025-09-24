@@ -1,0 +1,47 @@
+{
+	"schemaVersion": 1,
+	"id": "mtc",
+	"version": "${version}",
+	"name": "Test Mod",
+	"description": "This is a Test Mod for 1.21.7~1.21.8 fabric!",
+	"authors": [
+		"Redstone233"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/Redstone2337/TestMod-1.21.7-fabric"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/mtc/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.redstone233.test.TestMod"
+		],
+		"client": [
+			"net.redstone233.test.TestModClient"
+		],
+		"fabric-datagen": [
+			"net.redstone233.test.TestModDataGenerator"
+		],
+      "modmenu": [
+        "net.redstone233.test.core.impl.ModMenuIntegration"
+      ]
+	},
+	"mixins": [
+		"mtc.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": [
+			"1.21.7",
+   			"1.21.8"
+		],
+		"java": ">=21",
+		"fabric-api": ">=0.129.0+1.21.7",
+        "cloth-config": ">=19.0.147"
+	},
+	"suggests": {
+		"modmenu": ">=15.0.0-beta.3"
+	}
+}
