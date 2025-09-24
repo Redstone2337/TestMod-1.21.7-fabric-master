@@ -53,7 +53,7 @@ public class ModConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
     @Comment("按钮点击后打开的链接")
-    public String buttonLink = "https://github.com/Redstone2337/TestMod-1.21.7-fabric/issues";
+    public String buttonLink = "https://github.com/Redstone2337/TestMod-1.21.7-fabric-master/issues";
 
     @ConfigEntry.Gui.Tooltip
     @Comment("文本滚动速度 (像素/秒)")
