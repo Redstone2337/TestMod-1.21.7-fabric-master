@@ -17,15 +17,26 @@ import net.redstone233.test.core.until.RandomNumber;
 public class TestStatusEffect extends StatusEffect {
 //    private final int random = RandomNumber.nextInt(-1, 10);
 
+    private static boolean isRandom;
+
     public TestStatusEffect(StatusEffectCategory category, int color) {
         super(category, color);
+    }
+
+    public static boolean isIsRandom() {
+        return isRandom;
+    }
+
+    public static void setIsRandom(boolean isRandom) {
+        TestStatusEffect.isRandom = isRandom;
     }
 
     @Override
     public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
         int min = -1;
         int max = 10;
-        if (entity instanceof PlayerEntity player) {
+        setIsRandom(true);
+        if (entity instanceof PlayerEntity player && isIsRandom()) {
 //            int random = RandomNumber.nextInt(-1,10);
             int random = MathHelper.nextBetween(world.getRandom(), min, max);
             player.sendMessage(Text.literal("当前随机数：" + random)
@@ -138,6 +149,9 @@ public class TestStatusEffect extends StatusEffect {
 
     @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
+        if (isIsRandom()) {
+            setIsRandom(false);
+        }
         return true;
     }
 }
